@@ -34,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Type check
-        run: npm run type-check --if-present
+        run: npm run --if-present type-check
 
       - name: Lint
         run: npm run --if-present lint
