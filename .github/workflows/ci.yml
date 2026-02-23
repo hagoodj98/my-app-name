@@ -29,11 +29,9 @@ jobs:
           node-version: 20
           cache: npm
 
-      # NOTE: `npm ci` is stricter and will fail if the lockfile is out of sync.
-      # While you’re resetting this repo, use `npm install` so CI can generate a sane install.
-      # Once everything is stable, switch back to `npm ci`.
+      # NOTE: `npm ci` uses package-lock.json and will fail if it’s out of sync with package.json.
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Type check
         run: npm run type-check --if-present
